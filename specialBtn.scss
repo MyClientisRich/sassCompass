@@ -1,0 +1,25 @@
+@function boxShadow($color, $size, $minusy: 1, $minusx: -1) {
+	$shadows:();
+
+	@for $i from 1 through $size {
+  		$shadows: append($shadows, #{$minusx * $i}px #{$minusy * $i}px 0 0 $color, comma);
+	}
+
+	@return $shadows;
+}
+
+@mixin btnSpecial($color, $size, $posTop: 'bottom', $posLeft: 'left') {
+	
+	$minusx: 1;
+	@if $posLeft == 'right' {
+		$minusx: -1;
+	}
+
+	$minusy: -1;
+	@if $posTop == 'top' {
+		$minusy: 1;
+	}
+
+	@include transform(translate3D( #{$minusx * $size}px, #{$minusy * $size}px, 0));
+	@include box-shadow(boxShadow($color, $size, $minusy * -1, $minusx * -1));
+}
