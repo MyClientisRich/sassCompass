@@ -1,4 +1,6 @@
-# Mixins & functions for Sass and Compass
+# Sass & Compass
+A list of functions and mixins for Sass and Compass
 
-**specialBtn**
+##specialBtn
+
 See an [example here](http://codepen.io/myclientisrich/full/azZevP/)
